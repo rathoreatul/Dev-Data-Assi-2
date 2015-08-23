@@ -1,0 +1,49 @@
+Developing Data Product
+Shiny Apps: Kayak Rentals
+========================================================
+author: ARath
+date: `r date()`
+
+
+Overview
+========================================================
+
+This Application has been developed for the Datascience Project.
+
+- The Apps is simple, it takes an input of how many hours you want to rent a boat.
+- The outcome shows how much money will you owe for that many number of hours.
+
+
+
+Instructions
+=== 
+
+Follow the instuctions below to use this apps.
+
+- Once you have apps up and running following the instructions on github.
+- Enter how many hours you want to rent the boat.
+- Hit Enter
+- The amount in $ is shown on the screen which you will owe if renting.
+
+R code
+========================================================
+
+Incase you are interested in code:
+
+library(shiny)
+calhrvalue <- function(howmanyhours) howmanyhours * 20
+
+shinyServer(
+  function(input,output){
+  output$inputvalue <- renderPrint({input$howmanyhours})
+  output$hourlyvalue <- renderPrint({calhrvalue(input$howmanyhours)})
+  }
+)
+
+Further Reference
+========================================================
+
+You can go to Shiny Documentations at: http://shiny.rstudio.com/reference/shiny/latest/
+
+Q/A
+====
